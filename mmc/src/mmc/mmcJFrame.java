@@ -308,9 +308,9 @@ public class mmcJFrame extends javax.swing.JFrame {
         List<FileName> list = getSrcFileList(file);
         this.sortFileByName(list);
         List<File> listFiles = Lists.newArrayList();
-        list.forEach((s) -> {
-            listFiles.add(new File(jTextField1.getText() + "/" + s.getName2() + "." + DEF_EXT));
-        });
+        for(FileName tmp : list) {
+             listFiles.add(new File(jTextField1.getText() + "/" + tmp.getName2() + "." + DEF_EXT));
+        }
         return listFiles;
     }
 
